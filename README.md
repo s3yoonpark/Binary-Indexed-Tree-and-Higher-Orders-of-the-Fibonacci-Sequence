@@ -1,2 +1,3 @@
 # Binary Indexed Tree and Higher Orders of the Fibonacci Sequence
- 
+
+This repository contains the implementation of the Fibonacci Indexed Tree (proposed by Anubhav Baweja in arXiv:1612.09083) generalised to higher orders of the Fibonacci sequence. When n>2, we can construct a FIT that is more efficient in the query function and performs almost the same in the update function compared to a BIT, resulting in a reduction of the trade-off between the two functions from the n=2 case presented by Baweja. More information about this can be read from [this paper](https://dx.doi.org/10.2139/ssrn.4809152). 
