@@ -19,26 +19,7 @@ vector<int> pref_sum; // stores prefix sum of the Fibonacci sequence
 
 int FIT[mxN+1]; 
 
-void update(int k, int x) {
-  while (k <= N) {
-    FIT[k] += x; 
-    k += smallest_sum[k];
-  }
-}
-
-int query(int k) {
-  int sum = 0;  
-  while (k >= 1) {
-    sum += FIT[k]; 
-    k -= smallest_fib[k]; 
-  }
-  return sum;
-}
-
-signed main() {
-  ios_base::sync_with_stdio(false); 
-  cin.tie(nullptr); 
-
+void setup() {
   fib.assign(order+1, 1LL); 
   fib[0] = 0; 
   smallest_fib.assign(mxN+1, -1); 
@@ -77,6 +58,29 @@ signed main() {
       }
     }
   }
+}
+
+void update(int k, int x) {
+  while (k <= N) {
+    FIT[k] += x; 
+    k += smallest_sum[k];
+  }
+}
+
+int query(int k) {
+  int sum = 0;  
+  while (k >= 1) {
+    sum += FIT[k]; 
+    k -= smallest_fib[k]; 
+  }
+  return sum;
+}
+
+signed main() {
+  ios_base::sync_with_stdio(false); 
+  cin.tie(nullptr); 
+
+  setup(); 
 
   int q; 
   cin >> N >> q; 
